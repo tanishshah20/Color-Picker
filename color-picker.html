@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrapper{
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .container{
+            height: max-content;
+            width: max-content;   
+            background: white;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .container label{
+            height: max-content;
+            width: max-content;
+            color: black;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container #color{
+            height: 50px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .container #text{
+            height: 30px;
+            width: 100%;
+            margin: 5px 0;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <label for="color">Select any color: </label>
+            <input type="color" name="color" id="color" onchange="colorchange()">
+            <input type="text" name="text" id="text">
+        </div>
+    </div>
+
+    <script>
+        let bg = document.getElementById('wrapper');
+
+        function colorchange(){
+            let color = document.getElementById('color').value;
+            bg.style.backgroundColor=color;
+            let text = document.getElementById('text');
+            text.value=color;
+        }
+    </script>
+</body>
+</html>
